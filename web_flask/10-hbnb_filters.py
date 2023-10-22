@@ -14,6 +14,7 @@ def teardown_session(exception):
     """ Teardown """
     storage.close()
 
+
 @app.route('/hbnb_filters/', strict_slashes=False)
 def display_html():
     """Called with /states route """
@@ -23,6 +24,7 @@ def display_html():
     return render_template('10-hbnb_filters.html',
                            states=states.values(),
                            amenities=amenities.values())
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

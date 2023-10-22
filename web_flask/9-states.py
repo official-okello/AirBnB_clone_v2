@@ -15,6 +15,7 @@ def teardown_session(exception):
     """ Teardown """
     storage.close()
 
+
 @app.route('/states/', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
 def display_html(id=None):
@@ -35,6 +36,7 @@ def display_html(id=None):
 
     return render_template('9-states.html',
                            items=None)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

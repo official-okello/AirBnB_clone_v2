@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Script that runs a Flask Web app """
+
 from flask import Flask, render_template
 from models import storage
 from models.state import State
@@ -15,6 +16,7 @@ def teardown_session(exception):
     """ Teardown """
     storage.close()
 
+
 @app.route('/hbnb/', strict_slashes=False)
 def display_html():
     """Called with /states route """
@@ -26,6 +28,7 @@ def display_html():
                            states=states.values(),
                            amenities=amenities.values(),
                            places=places.values())
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

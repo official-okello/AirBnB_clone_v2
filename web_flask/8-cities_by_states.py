@@ -15,6 +15,7 @@ def teardown_session(exception):
     """ Teardown """
     storage.close()
 
+
 @app.route('/cities_by_states', strict_slashes=False)
 def display_html():
     """Called with /states_list route """
@@ -22,6 +23,7 @@ def display_html():
     return render_template('8-cities_by_states.html',
                            Table="States",
                            states=states)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
